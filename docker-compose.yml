@@ -1,4 +1,4 @@
-name: Odoo_services_Prim  er_Modulo
+name: odoo_services_primer_modulo
 
 services:
   odoo:

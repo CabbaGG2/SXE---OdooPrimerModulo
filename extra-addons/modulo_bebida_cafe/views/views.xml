@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form" model="ir.ui.view">
+        <field name="name">view.form</field>
+        <field name="model">modulo_bebida_cafe.modulo_bebida_cafe</field>
+        <field name="arch" type="xml">
+            <form string="Programa que sugiere el consumo de cafeina">
+                <sheet>
+                    <group>
+                        <field name="alumnos"/>
+                        <field name="agotamiento"/>
+                        <field name="bebida" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_list" model="ir.ui.view">
+        <field name="name">view.list</field>
+        <field name="model">modulo_bebida_cafe.modulo_bebida_cafe</field>
+        <field name="arch" type="xml">
+            <list string="Programa que sugiere el consumo de cafeina">
+                <field name="alumnos"/>
+                <field name="agotamiento"/>
+                <field name="bebida"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_action" model="ir.actions.act_window">
+        <field name="name">Programa que sugiere el consumo de cafeina</field>
+        <field name="res_model">modulo_bebida_cafe.modulo_bebida_cafe</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Registra la primera alma agotada.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_root"
+        name="menu_modulo"
+        sequence="10"/>
+
+    <menuitem
+        id="menu_medidoragotamiento_data"
+        name="Mediciones"
+        parent="menu_root"
+        action="view_action"
+        sequence="1"/>
+
+</odoo>
